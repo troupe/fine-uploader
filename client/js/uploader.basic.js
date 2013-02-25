@@ -102,6 +102,12 @@ qq.FineUploaderBasic = function(o){
             paramNames: {
                 name: 'qqblobname'
             }
+        },
+        s3: {
+            bucketName: 'mybucket',
+            keyPrefix: null,
+            accessKey: 'MY_ACCESS_KEY',
+            acl: 'private'
         }
     };
 
