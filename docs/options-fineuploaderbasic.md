@@ -561,3 +561,68 @@ Options used when `Blob` objects are to be uploaded.
     </tbody>
 </table>
 
+### `s3` option properties: ###
+Options used when you would like to upload files directly to Amazon S3.
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>enabled</td>
+            <td>boolean</td>
+            <td>false</td>
+            <td>Set to <code>true</code> if you would like all files to be uploaded directly to S3, instead of
+            sending them to the endpoint defined in the <code>request</code> option.</td>
+        </tr>
+        <tr>
+            <td>bucket</td>
+            <td>string</td>
+            <td>mybucket</td>
+            <td>All files will be sent to this bucket.</td>
+        </tr>
+        <tr>
+            <td>objectKeyPrefix</td>
+            <td>string</td>
+            <td><code>null</code></td>
+            <td>Any text to be appended to the object key use to store the file.  If this is provided, the key will be
+            {keyPrefix}/{fileUuid}.</td>
+        </tr>
+        <tr>
+            <td>awsAccessKey</td>
+            <td>string</td>
+            <td>MY_PUBLIC_KEY</td>
+            <td>This is your public AWS key, NOT your secret key.</td>
+        </tr>
+        <tr>
+            <td>privateFile</td>
+            <td>boolean</td>
+            <td>true</td>
+            <td>This refers to the desired visibility of the uploaded object.  If this is <code>false</code>, the object
+            will be publicly accessible.</td>
+        </tr>
+        <tr>
+            <td>signatureEndpoint</td>
+            <td>string</td>
+            <td>/server/policysigner</td>
+            <td>The endpoint that, when passed a policy document, will return a signature.  This signature must be sent along
+            with the request to S3.  For more information on creating signature, see
+            <a href="http://aws.amazon.com/articles/1434/">the AWS article on HTML POST form upload support</a>.</td>
+        </tr>
+        <tr>
+            <td>successEndpoint</td>
+            <td>string</td>
+            <td>/server/success.html</td>
+            <td>For iframe uploads, we must instruct S3 to redirect to an endpoint on the same domain as the origin server
+            if the upload is successful, otherwise, Fine Uploader will not be able to determine if the upload has succeeded.
+            If is also possible to redirect to an endpoint on a different domain, provided the <code>cors</code> option is
+            enabled AND the endpoint returns a response as described in the "handling iframe upload requests" section of
+            the <a href="http://blog.fineuploader.com/2013/01/cors-support-in-33.html">CORS support blog post</a>.</td>
+        </tr>
+    </tbody>
+</table>

@@ -104,10 +104,13 @@ qq.FineUploaderBasic = function(o){
             }
         },
         s3: {
-            bucketName: 'mybucket',
-            keyPrefix: null,
-            accessKey: 'MY_ACCESS_KEY',
-            acl: 'private'
+            enabled: false,
+            bucket: 'mybucket',
+            objectKeyPrefix: null,
+            awsAccessKey: 'MY_PUBLIC_ACCESS_KEY',
+            privateFile: true,
+            signatureEndpoint: '/server/policysigner',
+            successEndpoint: '/server/success.html'
         }
     };
 
