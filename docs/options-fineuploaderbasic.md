@@ -610,8 +610,9 @@ Options used when you would like to upload files directly to Amazon S3.
             <td>signatureEndpoint</td>
             <td>string</td>
             <td>/server/policysigner</td>
-            <td>The endpoint that, when passed a policy document, will return a signature.  This signature must be sent along
-            with the request to S3.  For more information on creating signature, see
+            <td>The endpoint that, when passed a JSON policy document, will return a base-64 encoded signature and a base-64 encoded
+            policy document.  These items must be sent along with the request to S3.  The response is expected to be a JSON response,
+            with both `policy` and `signature` properties.  For more information on creating a signature, see
             <a href="http://aws.amazon.com/articles/1434/">the AWS article on HTML POST form upload support</a>.</td>
         </tr>
         <tr>
