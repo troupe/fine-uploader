@@ -82,7 +82,7 @@ qq.UploadButton = function(o) {
 
     // make button suitable container for input
     qq(options.element).css({
-        position: 'relative',
+        // position: 'relative',
         overflow: 'hidden',
         // Make sure browse button is in the right side
         // in Internet Explorer
