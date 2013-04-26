@@ -31,19 +31,14 @@ qq.UploadButton = function(o) {
         input.setAttribute("name", options.name);
 
         qq(input).css({
-            position: 'absolute',
-            // in Opera only 'browse' button
-            // is clickable and it is located at
-            // the right side of the input
-            right: 0,
-            top: 0,
-            fontFamily: 'Arial',
-            // 4 persons reported this, the max values that worked for them were 243, 236, 236, 118
-            fontSize: '118px',
-            margin: 0,
-            padding: 0,
-            cursor: 'pointer',
-            opacity: 0
+            //position: 'absolute',
+            //width: '32px',
+            //height: '32px',
+            overflow: 'hidden',
+            // Make sure browse button is in the right side
+            // in Internet Explorer
+            direction: 'ltr',
+            cursor: 'pointer'
         });
 
         options.element.appendChild(input);
